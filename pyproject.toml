@@ -8,6 +8,7 @@ packages = [{include = "homework_13"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pytest = "^8.0.2"
 
 
 [build-system]

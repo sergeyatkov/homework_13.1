@@ -1,6 +1,6 @@
 class Category:
     """
-    Класс описывает объект "Категоря товара"
+    Класс описывает объект "Категория товара"
     """
     name: str
     description: str
@@ -13,3 +13,5 @@ class Category:
         self.name = name
         self.description = description
         self.goods = goods
+
+        Category.total_number_cat += 1
