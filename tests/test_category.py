@@ -3,11 +3,15 @@ import pytest
 
 
 @pytest.fixture
-def boots():
-    return Category("Boots", "Shoes", ["Sneakers", "Boots", "Slippers"])
+def cat_1():
+    return Category("Смартфоны",
+                    "Смартфоны, как средство не только коммуникации,"
+                    " но и получение дополнительных функций для удобства жизни",
+                    [])
 
 
-def test_init(boots):
-    assert boots.name == "Boots"
-    assert boots.description == "Shoes"
-    assert boots.goods == ["Sneakers", "Boots", "Slippers"]
+def test_init(cat_1):
+    assert cat_1.name == "Смартфоны"
+    assert cat_1.description == ("Смартфоны, как средство не только коммуникации,"
+                                 " но и получение дополнительных функций для удобства жизни")
+    assert cat_1.goods == []
