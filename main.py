@@ -1,8 +1,9 @@
-from config import OPERATIONS_PATH
+from functions import *
 
 
 def main():
-    pass
+    json_file: list[dict] = get_categories_list("data", "products.json")
+    parse_category(json_file)
 
 
 if __name__ == '__main__':
