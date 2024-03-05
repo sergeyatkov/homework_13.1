@@ -1,3 +1,6 @@
+from config import OPERATIONS_PATH
+
+
 def main():
     pass
 
