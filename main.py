@@ -1,4 +1,4 @@
-from functions import *
+from functions import get_categories_list, parse_category
 
 
 def main():
