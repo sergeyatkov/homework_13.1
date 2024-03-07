@@ -25,13 +25,13 @@ def parse_products(products: dict[Product]) -> list:
     """
     list_product = []
     for product in products:
-        pa = Product(
+        item = Product(
             name=product["name"],
             description=product["description"],
             price=product["price"],
             quantity=product["quantity"]
         )
-        list_product.append(pa)
+        list_product.append(item)
     return list_product
 
 
