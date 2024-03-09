@@ -30,12 +30,16 @@ class Product:
         cls.quantity = quantity
         return cls(name, description, price, quantity)
 
-    @property
     def get_price(self):
         return self.price
 
-    @get_price.setter
-    def get_price(self, price):
+    def set_price(self, price):
         self.price = price
         if price <= 0:
             print("Некорректное занчение (цена)")
+
+    def get_quantity(self):
+        return self.quantity
+
+    def set_quantity(self, new_quantity: int):
+        self.quantity = new_quantity
