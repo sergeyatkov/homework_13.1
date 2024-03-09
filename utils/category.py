@@ -25,7 +25,8 @@ class Category:
         return self.__products
 
     def add_product(self, product: [Product]):
+        """
+        метод принимает на вход объект товара и добавляет его в список.
+        """
         self.__products.append(product)
 
-    def new_product(self, param, param1, param2, param3):
-        pass

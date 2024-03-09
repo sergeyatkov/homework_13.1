@@ -20,5 +20,22 @@ class Product:
 
     @classmethod
     def new_product(cls, name: str, description: str, price: float, quantity: int):
-        cls.name, cls.description, cls.price, cls.quantity = input().split()
+        """
+        Метод создает товар, который можно добавлять в список товаров.
+        :return: возвращает объект
+        """
+        cls.name = name
+        cls.description = description
+        cls.price = price
+        cls.quantity = quantity
         return cls(name, description, price, quantity)
+
+    @property
+    def get_price(self):
+        return self.price
+
+    @get_price.setter
+    def get_price(self, price):
+        self.price = price
+        if price <= 0:
+            print("Некорректное занчение (цена)")
