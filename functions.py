@@ -16,7 +16,7 @@ def get_categories_list(path, file_name) -> list[dict]:
         return json.load(file)
 
 
-def parse_products(products: dict[Product]) -> list:
+def parse_products(products: dict[Product]) -> list[Product]:
     """
     Функция создает экземпляры класса Product
     и помещает данные в список.
@@ -35,7 +35,7 @@ def parse_products(products: dict[Product]) -> list:
     return list_product
 
 
-def parse_category(json_file) -> list:
+def parse_category(json_file) -> list[Category]:
     """
     Функция создает экземпляры класса Category.
     и помещает данные в список.
