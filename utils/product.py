@@ -13,10 +13,9 @@ class Product:
         self.price = price
         self.quantity = quantity
 
-    @property
-    def get_info(self):
-        return (f"{self.name}, {self.__price} руб. "
-                f"Остаток: {self.__quantity} шт.")
+    def __str__(self):
+        return (f"{self.name}, {self.price} руб.\n"
+                f"Остаток: {self.quantity} шт.")
 
     @classmethod
     def new_product(cls, name: str, description: str, price: float, quantity: int):
@@ -43,6 +42,3 @@ class Product:
     @quantity.setter
     def quantity(self, new_quantity: int):
         self.__quantity = new_quantity
-
-    # def set_quantity(self, new_quantity: int):
-    #     self.__quantity = new_quantity
