@@ -14,6 +14,8 @@ def main():
     print(item.__len__())
     print(len(item[0]))
     print(item[0])
+    print(item[1])
+    print(item[0].products[0].__add__(item[0].products[1]))
 
 
 if __name__ == '__main__':
