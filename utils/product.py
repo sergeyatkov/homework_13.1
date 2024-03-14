@@ -15,8 +15,8 @@ class Product:
 
     @property
     def get_info(self):
-        return (f"{self.name}, {self.price} руб. "
-                f"Остаток: {self.quantity} шт.")
+        return (f"{self.name}, {self.__price} руб. "
+                f"Остаток: {self.__quantity} шт.")
 
     @classmethod
     def new_product(cls, name: str, description: str, price: float, quantity: int):
@@ -24,22 +24,25 @@ class Product:
         Метод создает товар, который можно добавлять в список товаров.
         :return: возвращает объект
         """
-        cls.name = name
-        cls.description = description
-        cls.price = price
-        cls.quantity = quantity
         return cls(name, description, price, quantity)
 
-    def get_price(self):
-        return self.price
+    @property
+    def price(self):
+        return self.__price
 
-    def set_price(self, price):
-        self.price = price
+    @price.setter
+    def price(self, price):
         if price <= 0:
             print("Некорректное занчение (цена)")
+        self.__price = price
 
-    def get_quantity(self):
-        return self.quantity
+    @property
+    def quantity(self) -> int:
+        return self.__quantity
 
-    def set_quantity(self, new_quantity: int):
-        self.quantity = new_quantity
+    @quantity.setter
+    def quantity(self, new_quantity: int):
+        self.__quantity = new_quantity
+
+    # def set_quantity(self, new_quantity: int):
+    #     self.__quantity = new_quantity
