@@ -29,7 +29,8 @@ def parse_products(products: dict[Product]) -> list[Product]:
             name=product["name"],
             description=product["description"],
             price=product["price"],
-            quantity=product["quantity"]
+            quantity=product["quantity"],
+            color=product["color"]
         )
         list_product.append(item)
     return list_product
