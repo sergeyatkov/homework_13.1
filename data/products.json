@@ -8,21 +8,21 @@
         "description": "256GB, Серый цвет, 200MP камера",
         "price": 180000.0,
         "quantity": 5,
-        "color": "red"
+        "color": "gray"
       },
       {
         "name": "Iphone 15",
         "description": "512GB, Gray space",
         "price": 210000.0,
         "quantity": 8,
-        "color": "blue"
+        "color": "gray"
       },
       {
         "name": "Xiaomi Redmi Note 11",
         "description": "1024GB, Синий",
         "price": 31000.0,
         "quantity": 14,
-        "color": "green"
+        "color": "blue"
       }
     ]
   },
@@ -35,7 +35,7 @@
         "description": "Фоновая подсветка",
         "price": 123000.0,
         "quantity": 7,
-        "color": "orange"
+        "color": "black"
       }
     ]
   }

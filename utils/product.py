@@ -8,7 +8,7 @@ class Product:
     quantity: int
     color: str
 
-    def __init__(self, name: str, description: str, price: float, quantity: int, color: str):
+    def __init__(self, name: str, description: str, price: float, quantity: int, color: str) -> object:
         self.name = name
         self.description = description
         self.price = price
@@ -16,19 +16,19 @@ class Product:
         self.color = color
 
     def __str__(self):
-        return (f"{self.name}, {self.price} руб. "
+        return (f"{self.name}, цвет: {self.color}, {self.price} руб. "
                 f"Остаток: {self.quantity} шт.")
 
     def __add__(self, other) -> float:
         return self.price * self.quantity + other.price * other.quantity
 
     @classmethod
-    def new_product(cls, name: str, description: str, price: float, quantity: int):
+    def new_product(cls, name: str, description: str, price: float, quantity: int, color: str):
         """
         Метод создает товар, который можно добавлять в список товаров.
         :return: возвращает объект
         """
-        return cls(name, description, price, quantity)
+        return cls(name, description, price, quantity, color)
 
     @property
     def price(self):
@@ -47,11 +47,3 @@ class Product:
     @quantity.setter
     def quantity(self, new_quantity: int):
         self.__quantity = new_quantity
-
-
-class Smartphones(Product):
-    def __init__(self, performance: str, model: str, memory_capacity: str):
-        # self.performance = performance
-        # self.model = model
-        # self.memory_capacity = memory_capacity
-        super().__init__(performance, model, memory_capacity)

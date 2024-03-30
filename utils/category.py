@@ -33,7 +33,7 @@ class Category:
     def products(self) -> list[Product]:
         return self.__products
 
-    def add_product(self, name: str, description: str, price: float, quantity: int):
+    def add_product(self, name: str, description: str, price: float, quantity: int, color: str):
         """
         метод принимает на вход объект товара и добавляет его в список.
         """
@@ -43,5 +43,5 @@ class Category:
                 if product.price < price:
                     product.price = price
                 return
-        product = Product.new_product(name, description, price, quantity)
+        product = Product.new_product(name, description, price, quantity, color)
         self.__products.append(product)
