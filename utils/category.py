@@ -33,15 +33,17 @@ class Category:
     def products(self) -> list[Product]:
         return self.__products
 
-    def add_product(self, name: str, description: str, price: float, quantity: int, color: str):
+    def add_product(self, i):
         """
         метод принимает на вход объект товара и добавляет его в список.
         """
+        if not isinstance(i, Product):
+            raise Exception("не понял")
         for product in self.products:
-            if product.name == name:
-                product.quantity += quantity
-                if product.price < price:
-                    product.price = price
+            if product.name == i.name:
+                product.quantity += i.quantity
+                if product.price < i.price:
+                    product.price = i.price
                 return
-        product = Product.new_product(name, description, price, quantity, color)
+        product = Product.new_product(i.name, i.description, i.price, i.quantity, i.color)
         self.__products.append(product)
