@@ -16,6 +16,7 @@ def main():
     print(item[0])
     print(item[1])
     print(item[0].products[0].__add__(item[0].products[1]))
+    print(item[0].products[0].__add__(item[1]))
     print(item[0].products[1].color)
 
 

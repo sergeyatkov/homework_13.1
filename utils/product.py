@@ -20,7 +20,9 @@ class Product:
                 f"Остаток: {self.quantity} шт.")
 
     def __add__(self, other) -> float:
-        return self.price * self.quantity + other.price * other.quantity
+        if type(self) == type(other):
+            return self.price * self.quantity + other.price * other.quantity
+        raise Exception("Ошибка типа.")
 
     @classmethod
     def new_product(cls, name: str, description: str, price: float, quantity: int, color: str):
