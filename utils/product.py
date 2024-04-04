@@ -1,4 +1,8 @@
-class Product:
+from utils.mixin_repr import MixinRepr
+from utils.other_object import OtherObject
+
+
+class Product(OtherObject, MixinRepr):
     """
     Класс описывает объет "Товар"
     """
@@ -8,7 +12,8 @@ class Product:
     quantity: int
     color: str
 
-    def __init__(self, name: str, description: str, price: float, quantity: int, color: str) -> object:
+    def __init__(self, name: str, description: str, price: float, quantity: int, color: str):
+        super().__init__(name, description, price, quantity, color)
         self.name = name
         self.description = description
         self.price = price
