@@ -1,7 +1,11 @@
 from abc import ABC, abstractmethod
 
 
-class OtherObject(ABC):
+class AnyProduct(ABC):
+    """
+    Абстрактный класс.
+    Формирует структуру будущих классов наследников.
+    """
     name: str
     description: str
     price: float
@@ -14,3 +18,11 @@ class OtherObject(ABC):
         self.price = price
         self.quantity = quantity
         self.color = color
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+    @abstractmethod
+    def __add__(self, other):
+        pass

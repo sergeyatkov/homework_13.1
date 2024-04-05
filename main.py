@@ -1,6 +1,6 @@
 from functions import get_categories_list, parse_category
 from utils.category import Category
-from utils.other_object import OtherObject
+from utils.any_product import AnyProduct
 from utils.product import Product
 from utils.smartphone import Smartphone
 
@@ -24,7 +24,7 @@ def main():
     product_2 = Smartphone("CPU", "3100", "256 MB",
                            "Nokia", "Старый добрый Nokia", 23000.99,
                            25, "black")
-    print(product_2)
+    print(product_2.__add__(item[0].products[1]))
 
 
 if __name__ == '__main__':
