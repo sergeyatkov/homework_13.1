@@ -7,9 +7,9 @@ from utils.product import Product
 def get_categories_list(path, file_name) -> list[dict]:
     """
         Функция берет данные из файла json
-        :param path: путь к файлу.
-        :param file_name: имя файла.
-        :return: возвращает данные из файла.
+        :param path: Путь к файлу.
+        :param file_name: Имя файла.
+        :return: Возвращает данные из файла.
         """
     path = Path(__file__).parent.joinpath(path, file_name)
     with open(path, encoding="utf-8") as file:
@@ -20,8 +20,8 @@ def parse_products(products: dict[Product]) -> list[Product]:
     """
     Функция создает экземпляры класса Product
     и помещает данные в список.
-    :param products: словарь с инф. о товаре.
-    :return: список с инф. о товаре.
+    :param products: Словарь с инф. о товаре.
+    :return: Список с инф. о товаре.
     """
     list_product = []
     for product in products:
@@ -38,10 +38,10 @@ def parse_products(products: dict[Product]) -> list[Product]:
 
 def parse_category(json_file) -> list[Category]:
     """
-    Функция создает экземпляры класса Category.
+    Функция создает экземпляры класса Category
     и помещает данные в список.
     :param json_file: .json файл
-    :return: список с категориями
+    :return: Список с категориями
     """
     categories_list = []
     for category in json_file:
