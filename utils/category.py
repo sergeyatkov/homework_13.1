@@ -59,3 +59,19 @@ class Category(AnyCategory):
                 return
         product = Product.new_product(item.name, item.description, item.price, item.quantity, item.color)
         self.__products.append(product)
+
+    def average_price(self):
+        """
+        Метод, который подсчитывает средний ценник всех товаров.
+        """
+        number_of_positions = 0
+        sum_price = 0
+        for position in self.products:
+            number_of_positions += 1
+            sum_price += position.price
+
+        try:
+            sum_price / number_of_positions
+        except ZeroDivisionError:
+            return 0
+        return sum_price / number_of_positions
