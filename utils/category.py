@@ -71,7 +71,6 @@ class Category(AnyCategory):
             sum_price += position.price
 
         try:
-            sum_price / number_of_positions
+            return sum_price / number_of_positions
         except ZeroDivisionError:
             return 0
-        return sum_price / number_of_positions

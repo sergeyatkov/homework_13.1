@@ -23,8 +23,13 @@ def main():
     # print(item[0].products[1].color)
     product_2 = Smartphone("CPU", "3100", "256 MB",
                            "Nokia", "Старый добрый Nokia", 23000.99,
-                           25, "black")
-    print(product_2.__add__(item[0].products[1]))
+                           2, "black")
+    print(product_2)
+    print(item[0].__len__())
+    print(item[1].__len__())
+    print(item[0].average_price())
+    print(item[1].average_price())
+    print(item[2].average_price())
 
 
 if __name__ == '__main__':

@@ -38,5 +38,10 @@
         "color": "black"
       }
     ]
+  },
+  {
+    "name": "Бытовые товары",
+    "description": "С",
+    "products": []
   }
 ]
