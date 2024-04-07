@@ -17,7 +17,10 @@ class Product(AnyProduct, MixinRepr):
         self.name = name
         self.description = description
         self.price = price
-        self.quantity = quantity
+        if quantity <= 0:
+            raise ValueError("Количество товара должно быть больше 0.")
+        else:
+            self.quantity = quantity
         self.color = color
 
     def __str__(self) -> str:
