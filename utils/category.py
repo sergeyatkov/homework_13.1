@@ -64,11 +64,11 @@ class Category(AnyCategory):
         """
         Метод, который подсчитывает средний ценник всех товаров.
         """
-        sum_price = 0
+        sum_price = []
         for position in self.products:
-            sum_price += position.price
+            sum_price.append(position.price)
 
         try:
-            return sum_price / len(self.products)
+            return sum(sum_price) / len(self.products)
         except ZeroDivisionError:
             return 0
