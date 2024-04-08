@@ -4,7 +4,7 @@ from utils.any_product import AnyProduct
 
 class Product(AnyProduct, MixinRepr):
     """
-    Класс описывает объет "Товар"
+    Класс описывает объект "Товар"
     """
     name: str
     description: str
@@ -17,8 +17,8 @@ class Product(AnyProduct, MixinRepr):
         self.name = name
         self.description = description
         self.price = price
-        if quantity <= 0:
-            raise ValueError("Количество товара должно быть больше 0.")
+        if quantity == 0:
+            raise ValueError('Нельзя добавить товар с нулевым количеством!')
         else:
             self.quantity = quantity
         self.color = color
