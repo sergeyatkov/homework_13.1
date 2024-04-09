@@ -49,13 +49,13 @@ class Category(AnyCategory):
         корректирует количество на остатках и цену товара,
         затем добавляет его в список.
         """
-        if self.__products[3] == 0:
-            raise ValueError('Нельзя добавить товар с нулевым количеством!')
-
         if not isinstance(item, Product):
             raise Exception("Некорректный объект.")
 
         for product in self.products:
+            if item.quantity == 0:
+                raise ValueError('Нельзя добавить товар с нулевым количеством!')
+
             if product.name == item.name:
                 product.quantity += item.quantity
                 if product.price < item.price:
@@ -69,7 +69,11 @@ class Category(AnyCategory):
         """
         Метод, который подсчитывает средний ценник всех товаров.
         """
+        prices = []
+        for position in self.products:
+            prices.append(position.price)
+
         try:
-            return sum(self.__products) / len(self.products)
+            return sum(prices) / len(self.products)
         except ZeroDivisionError:
             return 0
