@@ -36,7 +36,7 @@ class Product(AnyProduct, MixinRepr):
         Магический метод __add__ возвращает
         общую стоимость всего оставшегося товара одной позиции.
         """
-        if type(self) == type(other):
+        if type(self) is type(other):
             return self.price * self.quantity + other.price * other.quantity
         raise Exception("Ошибка типа.")
 
