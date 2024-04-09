@@ -49,14 +49,19 @@ class Category(AnyCategory):
         корректирует количество на остатках и цену товара,
         затем добавляет его в список.
         """
+        if self.__products[3] == 0:
+            raise ValueError('Нельзя добавить товар с нулевым количеством!')
+
         if not isinstance(item, Product):
             raise Exception("Некорректный объект.")
+
         for product in self.products:
             if product.name == item.name:
                 product.quantity += item.quantity
                 if product.price < item.price:
                     product.price = item.price
                 return
+
         product = Product.new_product(item.name, item.description, item.price, item.quantity, item.color)
         self.__products.append(product)
 

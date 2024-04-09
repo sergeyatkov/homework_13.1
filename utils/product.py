@@ -17,10 +17,7 @@ class Product(AnyProduct, MixinRepr):
         self.name = name
         self.description = description
         self.price = price
-        if quantity == 0:
-            raise ValueError('Нельзя добавить товар с нулевым количеством!')
-        else:
-            self.quantity = quantity
+        self.quantity = quantity
         self.color = color
 
     def __str__(self) -> str:
